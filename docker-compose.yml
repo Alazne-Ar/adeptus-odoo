@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  odoo:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+     HOST: db
+     USER: odoo
+     PASSWORD: odoo
+    volumes:
+      - ./odoo:/opt/odoo
+      - ./custom-addons:/mnt/extra-addons
+    command: >
+      python3 /opt/odoo/odoo-bin --addons-path=/opt/odoo/addons,/mnt/extra-addons --dev=reload,xml --db_host=db --db_port=5432 --db_user=odoo --db_password=odoo
+    restart: unless-stopped
+
+volumes:
+  db-data:
