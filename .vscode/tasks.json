@@ -4,7 +4,7 @@
         {
             "label": "Update odoo module",
             "type": "shell",
-            "command": "docker compose exec odoo python3 /opt/odoo/odoo-bin -u adeptus_odoo -d adeptus --addons-path=/opt/odoo/addons,/mnt/extra-addons --db_host=db --db_port=5432 --db_user=odoo --db_password=odoo --stop-after-init",
+            "command": "docker compose exec odoo python3 /opt/odoo/odoo-bin -u adeptus_calvastres -d adeptus --addons-path=/opt/odoo/addons,/mnt/extra-addons --db_host=db --db_port=5432 --db_user=odoo --db_password=odoo --stop-after-init",
             "problemMatcher": []
         }
     ]
