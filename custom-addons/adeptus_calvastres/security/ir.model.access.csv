@@ -1,4 +1,3 @@
-id,name,mode_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_adeptus_calvastres_table,access_adeptus_calvastres.table,model_adeptus_calvastres_table,,1,1,1,1
-access_adeptus_calvastres_table,access_adeptus_calvastres.table,model_adeptus_calvastres_table,,1,1,1,1 
-access_adeptus_calvastres_booking,access_adeptus_calvastres.booking,model_adeptus_calvastres_booking,,1,1,1,1 
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_adeptus_calvastres_table,adeptus_calvastres.table,model_adeptus_calvastres_table,,1,1,1,1
+access_adeptus_calvastres_booking,adeptus_calvastres.booking,model_adeptus_calvastres_booking,,1,1,1,1 
