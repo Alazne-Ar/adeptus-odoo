@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
+                <field name="hour" widget="float_time"/>
                 <field name="table_id"/>
             </list>
         </field>
@@ -20,6 +21,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="hour" widget="float_time"/>
                         <field name="table_id"/>
                     </group>
                 </sheet>
