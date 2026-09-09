@@ -1,0 +1,36 @@
+<odoo>
+    <!-- List view -->
+    <record id="adeptus_booking_list_view" model="ir.ui.view">
+        <field name="name">adeptus_calvastres.booking.list</field>
+        <field name="model">adeptus_calvastres.booking</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="table_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form view-->
+    <record id="adeptus_booking_form_view" model="ir.ui.view">
+        <field name="name">adeptus_calvastres.booking.form</field>
+        <field name="model">adeptus_calvastres.booking</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="table_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action: which model open and with which view-->
+    <record id="action_adeptus_booking" model="ir.actions.act_window">
+        <field name="name">Bookings</field>
+        <field name="res_model">adeptus_calvastres.booking</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

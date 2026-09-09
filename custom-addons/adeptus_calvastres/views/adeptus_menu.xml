@@ -1,0 +1,5 @@
+<odoo>
+    <menuitem id="menu_adeptus_calvastres" name="Adeptus Calvastres" sequence="10"/>
+    <menuitem id="adeptus_calvastres_tables" name="Tables" parent="menu_adeptus_calvastres" action="action_adeptus_table" sequence="10"/>
+    <menuitem id="adeptus_calvastres_bookings" name="Bookings" parent="menu_adeptus_calvastres" action="action_adeptus_booking" sequence="10"/>
+</odoo>

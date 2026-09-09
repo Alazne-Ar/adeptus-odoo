@@ -1,0 +1,30 @@
+<odoo>
+    <record id="adeptus_inherit_table_list_view" model="ir.ui.view">
+        <field name="name">adeptus_calvastres.partner.list</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="member_date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">adeptus_calvastres.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="member_date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_partner" model="ir.actions.act_window">
+        <field name="name">Partners</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_member','=',True)]</field>
+    </record>
+</odoo>
