@@ -4,3 +4,4 @@ class Partner(models.Model):
     _inherit = 'res.partner'
 
     member_date = fields.Date(string='Member Since')
+    is_member = fields.Boolean(string="Is Member", default=False)
