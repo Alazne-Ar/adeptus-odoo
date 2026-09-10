@@ -1,22 +1,48 @@
 <odoo>
     <record id="adeptus_table_list_views" model="ir.ui.view">
         <field name="name">adeptus_calvastres.table.list</field>
-        <field name="model">res.partner</field>
+        <field name="model">adeptus_calvastres.table</field>
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
+                <field name="empty_table" widget="boolean"/>
+                <field name="bookings"/>
+                <!--
+                <field name="pos_X"/>
+                <field name="pos_Y"/>
+                -->
             </list>
         </field>
     </record>
 
+  <!--
+    <record id="adeptus_table_kanban_views" model="ir.ui.view">
+        <field name="name">adeptus_calvastres.table.kanban</field>
+        <field name="model">adeptus_calvastres.table</field>
+        <field name="arch" type="xml">
+            <templates>
+                <t t-name="kanban-box">
+                    <div t-attf-style="position:absolute; left:#{record.pos_x.raw_value}px; top:#{record.pos_y.raw_value}px;"
+                        t-attf-class="adeptus_table_card #{record.empty_table.raw_value ? 'table_free' : 'table_busy'}">
+                        <field name="name"/>
+                    </div>
+                </t>
+            </templates>
+        </field>
+    </record>
+
+    --> 
+
     <record id="adeptus_table_form" model="ir.ui.view">
         <field name="name">adeptus_calvastres.table.form</field>
-        <field name="model">res.partner</field>
+        <field name="model">adeptus_calvastres.table</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="empty_table" widget="boolean"/>
+                        <field name="bookings"/>
                     </group>
                 </sheet>
             </form>
