@@ -7,7 +7,10 @@
             <list>
                 <field name="name"/>
                 <field name="hour" widget="float_time"/>
+                <field name="partner_id"/>
                 <field name="table_id"/>
+                <field name="date"/>
+                <field name="state"/>
             </list>
         </field>
     </record>
@@ -18,11 +21,16 @@
         <field name="model">adeptus_calvastres.booking</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_cancel" string="Cancel" type="object" invisible="state == 'cancelled'" class="btn-danger"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
                         <field name="hour" widget="float_time"/>
+                        <field name="partner_id"/>
                         <field name="table_id"/>
+                        <field name="date"/>
                     </group>
                 </sheet>
             </form>
