@@ -1,5 +1,7 @@
 FROM python:3.12.6-slim-bookworm
 
+FROM python:3.12.6-slim-bookworm
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
@@ -18,7 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /opt/odoo
 
 COPY odoo/requirements.txt .
-RUN pip install --no-cache-dir inotify debugpy
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir inotify debugpy phonenumbers
 
 EXPOSE 8069
 
