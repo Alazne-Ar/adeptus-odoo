@@ -4,6 +4,7 @@ from odoo.exceptions import ValidationError
 class Booking(models.Model):
     _name = 'adeptus_calvastres.booking'
     _description = 'Booking tables'
+    _inherit = ['adeptus_calvastres.notify']
 
     name = fields.Char(string='Name', required=True)
     hour = fields.Float(string='Hour', required=True, help='The hour of the booking')
