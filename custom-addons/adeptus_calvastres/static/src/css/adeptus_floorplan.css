@@ -1,0 +1,17 @@
+/**
+.o_kanban_renderer.o_kanban_dashboard {
+    position: relative;
+    background-image: url('/adeptus_calvastres/static/src/img/floorplan.png');
+    background-size: no-repeat;
+    background-size: contain;
+    min-height: 600px;
+}
+
+.adeptus_table_card {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+    **/
