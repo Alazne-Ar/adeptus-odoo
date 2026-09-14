@@ -9,6 +9,7 @@
                 <field name="hour" widget="float_time"/>
                 <field name="partner_id"/>
                 <field name="table_id"/>
+                <field name="shift"/>
                 <field name="date"/>
                 <field name="state"/>
             </list>
@@ -29,6 +30,7 @@
                         <field name="name"/>
                         <field name="hour" widget="float_time"/>
                         <field name="partner_id"/>
+                        <field name="shift"/>
                         <field name="table_id"/>
                         <field name="date"/>
                     </group>
