@@ -10,11 +10,16 @@ class Booking(models.Model):
     hour = fields.Float(string='Hour', required=True, help='The hour of the booking')
     partner_id = fields.Many2one('adeptus_calvastres.partner', string='Partner', required=True, help='The partner who made the booking')
     table_id = fields.Many2one('adeptus_calvastres.table', string='Table', required=True, help='The table that is booked')
+    shift = fields.Selection([
+        ('morning', 'Mañana'),
+        ('afternoon', 'Tarde'),
+        ('night', 'Noche')
+    ], string='Turn', required=True, help='Turn of the day of booking')
     date = fields.Date(string='Date', required=True, help='The date of the booking')
     state = fields.Selection([
         ('confirmed', 'Confirmed'),
         ('cancelled', 'Cancelled'),
-    ], string='Status', help='The status of the booking')
+    ], string='Status', default="confirmed", help='The status of the booking')
 
 
     @api.model_create_multi
