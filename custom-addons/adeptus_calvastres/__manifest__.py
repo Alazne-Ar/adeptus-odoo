@@ -3,7 +3,7 @@
     "version": "1.0",
     "category": "Association",
     "summary": "Association member, game and finance management",
-    "depends": ["base"],
+    "depends": ["base", "account"],
     "application": True,
     "data": [
         "security/ir.model.access.csv",
