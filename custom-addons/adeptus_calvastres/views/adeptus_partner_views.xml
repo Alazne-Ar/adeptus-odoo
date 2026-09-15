@@ -5,6 +5,12 @@
         <field name="inherit_id" eval="False"/>
         <field name="arch" type="xml">
             <list>
+                <header>
+                    <button name="action_generate_monthly_receipt"
+                            type="object"
+                            string="action_generate monthly receipt"
+                            class="btn-primary"/>
+                </header>
                 <field name="name"/>
                 <field name="surname"/>
                 <field name="email"/>
