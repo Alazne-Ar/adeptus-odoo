@@ -8,8 +8,9 @@
                 <header>
                     <button name="action_generate_monthly_receipt"
                             type="object"
-                            string="action_generate monthly receipt"
-                            class="btn-primary"/>
+                            string="Generar recibos del socio"
+                            class="btn-primary">
+                    </button>
                 </header>
                 <field name="name"/>
                 <field name="surname"/>
@@ -47,5 +48,7 @@
         <field name="res_model">adeptus_calvastres.partner</field>
         <field name="view_mode">list,form</field>
         <field name="domain">[('is_member','=',True)]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0,0, {'view_mode': 'list', 'view_id':ref('view_partner_list')})]"/>
     </record>
 </odoo>
