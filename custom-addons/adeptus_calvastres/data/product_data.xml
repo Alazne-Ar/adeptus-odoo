@@ -1,0 +1,7 @@
+<odoo>
+    <record id="product_monthly_receipt" model="product.product">
+        <field name="name">Cuota mensual de socio</field>
+        <field name="type">service</field>
+        <field name="list_price">50.00</field>
+    </record>
+</odoo>
