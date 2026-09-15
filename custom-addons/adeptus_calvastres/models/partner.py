@@ -18,7 +18,9 @@ class Partner(models.Model):
         string="Bookings",
         help="The bookings made by the partner",
     )
-    res_partner = fields.Many2one("res.partner", string="Billing Partner", copy=False)
+    res_partner_id = fields.Many2one(
+        "res.partner", string="Billing Partner", copy=False
+    )
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -32,6 +34,7 @@ class Partner(models.Model):
                 )
             return members
 
+    # Function to generate the monthly receipt of the selected member
     def action_generate_monthly_receipt(self):
         product = self.env.ref("adeptus_calvastres.product_monthly_receipt")
         today = fields.Date.context_today(self)
