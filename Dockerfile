@@ -1,7 +1,5 @@
 FROM python:3.12.6-slim-bookworm
 
-FROM python:3.12.6-slim-bookworm
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
@@ -15,13 +13,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wkhtmltopdf \
     git \
     curl \
+    tesseract-ocr \
+    tesseract-ocr-spa \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/odoo
 
 COPY odoo/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir inotify debugpy phonenumbers
+RUN pip install --no-cache-dir inotify debugpy phonenumbers pytesseract pymupdf
 
 EXPOSE 8069
 
