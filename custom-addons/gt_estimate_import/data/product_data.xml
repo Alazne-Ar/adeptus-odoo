@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Producto genérico: las piezas del peritaje NO se crean como productos,
+         para no construir un catálogo con datos de GT Motive. La referencia y
+         la descripción van en el texto de cada línea del pedido. -->
+    <record id="product_pieza_peritaje" model="product.product">
+        <field name="name">Pieza según peritaje</field>
+        <field name="default_code">GT-PIEZA</field>
+        <field name="type">consu</field>
+        <field name="purchase_ok" eval="True"/>
+        <field name="sale_ok" eval="False"/>
+    </record>
+</odoo>
